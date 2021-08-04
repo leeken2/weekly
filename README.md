@@ -23,3 +23,4 @@ var top  = div.offsetTop;
 div.style.left = left + 10 + "px";
 div.style.top = top + 10 + "px";
 ```
+参考：[重绘、重排与浏览器优化方法](https://juejin.cn/post/6844903791494430733)
