@@ -9,7 +9,9 @@
 
 ## 8.4 
 - 浏览器内部会节流我们的dom操作，但是当我们需要读取dom的属性时，浏览器会强制刷新，以确保我们获得的值是最新的
-- dom 读写最好分离
+### dom 读写最好分离
+- 如下 bad，你读取了 offsetLeft（1次）,设置 left,然后又读取 offsetTop,会强制浏览器渲染left（2次），代码结束（3次）
+- 而 good，会等待left和top都设置完再渲染，读取（1次），代码结束（2次）
 ```
 // bad
 div.style.left = div.offsetLeft + 10 + "px";
